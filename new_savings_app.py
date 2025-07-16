@@ -37,7 +37,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.title("💸 Dark Mode Savings Planner")
+st.title("Saving for Sciences Po")
 
 # --- Inputs ---
 annual_income = st.slider("Annual Income (USD)", 20000, 100000, 50000, step=1000)
@@ -75,11 +75,11 @@ def savings_emoji(savings):
 rating = savings_emoji(total_savings)
 
 # --- Results Display ---
-st.markdown("### 💰 Results")
+st.markdown("### Results")
 st.write(f"**Post-Tax Monthly Income**: ${monthly_post_tax_income:,.2f}")
 st.write(f"**Discretionary Income (after Rent & Needs)**: ${discretionary_income:,.2f}")
 st.write(f"**Estimated Monthly Savings**: ${actual_monthly_savings:,.2f}")
-st.success(f"🎯 **Estimated Total Savings in One Year**: ${total_savings:,.2f} {rating}")
+st.success(f" **Estimated Total Savings in One Year**: ${total_savings:,.2f} {rating}")
 
 if discretionary_income <= 0:
     st.warning("⚠️ You have no discretionary income left after rent and needs.")
@@ -89,7 +89,7 @@ elif total_savings < 8581:
 # --- Pie Chart ---
 labels = ['Rent', 'Needs', 'Savings', 'Wants']
 amounts = [monthly_rent, monthly_needs, actual_monthly_savings, wants]
-colors = ['#ff6666', '#ffcc99', '#66ff66', '#6699ff']
+colors = ['#e7ecef', '#274c77', '#6096ba', '#a3cef1']
 
 fig, ax = plt.subplots()
 ax.pie(amounts, labels=labels, autopct='%1.1f%%', startangle=90, colors=colors, textprops={'color': 'white'})
